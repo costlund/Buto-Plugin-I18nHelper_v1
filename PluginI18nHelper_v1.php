@@ -94,7 +94,7 @@ class PluginI18nHelper_v1{
     $word = explode("\n", wfRequest::get('word'));    
     $yml = null;
     foreach ($keys as $key => $value) {
-      $value = str_replace("\r", "", $value);
+      $value = wfPhpfunc::str_replace("\r", "", $value);
       $yml .= "'".$value."': '".str_replace("\r", "", $word[$key])."'\n";
     }
     $element = array();
